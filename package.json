@@ -1,6 +1,6 @@
 {
-  "name": "harmony-sender",
-  "version": "0.1.0",
+  "name": "harmony-centrifuge",
+  "version": "0.1.1",
   "description": "",
   "main": "index.js",
   "scripts": {
