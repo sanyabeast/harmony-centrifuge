@@ -64,8 +64,12 @@ define(["harmony", "file!centrifuge.js"], function(harmony, centrifugeSource){
             // console.log(data);
         },
         on : function(eventName, callback){
-            this.callbacks[eventName] = this.callbacks[eventName] || [];
-            this.callbacks[eventName].push(callback);
+            harmony.run("harmony-centrifuge", function(data){
+                self.connection.on(data.eventName, data.callback);
+            }, {
+                eventName : eventName,
+                callback : this.harmony.callback(callback)
+            });
         },
         subscribe : function(eventName, callback){
             var sub = new Subscription(this, eventName, callback);
