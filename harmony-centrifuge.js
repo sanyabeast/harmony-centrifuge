@@ -1,5 +1,5 @@
 "use strict";
-define(["harmony", "file!centrifuge.js"], function(harmony, centrifugeSource){
+define(["harmony", "file!centrifuge/centrifuge.js"], function(harmony, centrifugeSource){
 
     var Subscription = function(centrifuge, eventName, callback){
         this.centrifuge = centrifuge;
